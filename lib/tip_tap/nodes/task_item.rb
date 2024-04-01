@@ -7,7 +7,8 @@ module TipTap
     class TaskItem < Node
       self.type_name = "taskItem"
       self.html_tag = :li
-      self.html_class_name = proc { class_names("task-item", {checked: checked?}) }
+      # self.html_class_name = proc { class_names("task-item", {checked: checked?}) }
+      self.html_class_name = "task-item"
 
       def paragraph(&block)
         raise ArgumentError, "Block required" if block.nil?
