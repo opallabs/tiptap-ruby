@@ -11,9 +11,12 @@ module TipTap
       self.html_class_name = "task-item"
 
       def to_html
-        paragraph_node = Paragraph.new(content: content)
+        paragraph_node = Paragraph.new(content[0])
         content_tag(html_tag,
-          safe_join([content_tag('input', nil, type: 'checkbox', checked: checked?), paragraph_node.to_html]), 
+          safe_join([
+            content_tag('input', nil, type: 'checkbox', checked: checked?), 
+            paragraph_node.to_html
+          ]), 
           class: html_class_name)
       end
 
